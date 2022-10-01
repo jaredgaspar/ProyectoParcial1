@@ -1,2 +1,3 @@
 # ProyectoParcial1
-Jared Gaspar Barnuevo
+Alumno: Jared Gaspar Barnuevo
+NivelCloud: Basico
