@@ -1,0 +1,24 @@
+Que es?
+Sistema de base de datos distribuido de codigo abierto, originalmente creado por facebook.
+
+Caracteristicas:
+Funciona muy bien para manejar grandes volumenes de datos distribuidos en multiples nodos.
+Se puede escalar facilmente para satisfacer un aumento repentino de la demanda de parte de los usuarios mediante la implementacion de clsuter de casandra de varios nodos y cumplir con los requisitos de alta disponibilidad sin un solo fallo.
+Es una base de datos NoSQL mas eficiente disponible en la actualidad. Una base de datos NoSQL ES un tipo de motor de procesamietno de datos que se implementa exclusivamente para trabajar con datos que se puedan almacenar en un formato tabular y por lo tanto no cumple con los requisitos de los bases de datos relacionados.
+Algunas de las caracteristicas mas resaltadas de una base de datos NoSQL son que pueden manejar cantidades extremadamente grandes de datos pueden tener un AP simple, pueden replicarse facilmente, estan practicamente libres de esquemas y son consistentes.
+
+Porque se debe usar APACHE CASSANDRA:
+Da soporte para un amplio conjunto de datos (no etructurados, estructurados, semiestructurados).
+Arquitectura linealmente escalable, su distribuicion es perfecta, esta base de datos noSQL permite distribuir datos de forma transparente y eficiente en multiples centros de datos.
+Alta fiabilidad.
+Soporte ACID (ATOMICIDAD CONSISTENCIA AISLAMIENTO Y DURABILIDAD).
+La escritura de datos se realiza en alta velocidad.
+
+Arquitectura de Cassandra:
+El objetivo principal de Cassandra es poder gestionar una gran carga de datos através de multiples nodos. Cassandra replica y distribuye la información desde el primer instante através de todos sus nodos.
+
+Todos los nodos en el cluster tienen el mismo papel, y para ofrecer la replicación desde el principio necesitan que todos los nodos se encuentren conectados entre si. En el caso en el que un nodo se caíga o falle, otro nodo funcionará en su lugar, por eso cada nodo tiene que funcionar de manera totalmente independiente.
+
+En un cluster de Cassandra, varios nodos pueden actuar como replicas, y si se detecta que alguno de estos nodos responde con información desactualizada, se buscará la información más actualizada para devolverla. Una vez se ha devuelto la información, se actualizará el valor del nodo para que tenga la información completamente actualizada.
+
+ 
