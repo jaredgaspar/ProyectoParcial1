@@ -1,0 +1,50 @@
+jared@jared-VirtualBox:~/Desktop$ cqlsh
+Connected to Test Cluster at 127.0.0.1:9042
+[cqlsh 6.0.0 | Cassandra 4.0.5 | CQL spec 3.4.5 | Native protocol v5]
+Use HELP for help.
+cqlsh> CREATE KEYSPACE PersonalVYT
+   ... WITH replication = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+cqlsh> USE PersonalVYT
+   ... CREATE TABLE users (
+   ... user_id varchar PRIMARY KEY,
+   ... First varchar,
+   ... last varchar,
+   ... age int
+   ... );
+Improper USE command.
+cqlsh> USE PersonalVYT;
+cqlsh:personalvyt> CREATE TABLE users (
+               ... user_id varchar PRIMARY KEY,
+               ... First varchar,
+               ... last varchar,
+               ... age int
+               ... );
+cqlsh:personalvyt> INSERT INTO users (user_id, first, last, age)
+               ... VALUES ('jgaspar','jared', 'gaspar', 25);
+cqlsh:personalvyt> SELECT * FROM users;
+
+ user_id | age | first | last
+---------+-----+-------+--------
+ jgaspar |  25 | jared | gaspar
+
+(1 rows)
+cqlsh:personalvyt> INSERT INTO users (user_id, first, last, age) VALUES ('jmestanza','jose', 'mestanza',45);
+cqlsh:personalvyt> SELECT * FROM users;
+
+ user_id   | age | first | last
+-----------+-----+-------+----------
+   jgaspar |  25 | jared |   gaspar
+ jmestanza |  45 |  jose | mestanza
+
+(2 rows)
+cqlsh:personalvyt> INSERT INTO users (user_id, first, last, age) VALUES ('egomez','elpidio', 'gomez',40);
+cqlsh:personalvyt> SELECT * FROM users;
+
+ user_id   | age | first   | last
+-----------+-----+---------+----------
+   jgaspar |  25 |   jared |   gaspar
+ jmestanza |  45 |    jose | mestanza
+    egomez |  40 | elpidio |    gomez
+
+(3 rows)
+cqlsh:personalvyt> 
